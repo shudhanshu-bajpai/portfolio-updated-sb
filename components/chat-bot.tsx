@@ -22,7 +22,7 @@ export default function ChatBot() {
     const newMessages = [
       ...messages,
       { type: "user", content: message },
-      { type: "bot", content: "Thanks for your message! Shudhanshu will get back to you soon." },
+      { type: "bot", content: "Thank for your message! Shudhanshu will get back to you soon." },
     ]
 
     setMessages(newMessages)
