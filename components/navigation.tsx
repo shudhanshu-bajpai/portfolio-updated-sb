@@ -64,7 +64,7 @@ export default function Navigation({ darkMode }: NavigationProps) {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-green-500 bg-clip-text text-transparent"
           >
-            Shudhanshu
+            Dev Portfolio
           </motion.div>
 
           <div className="hidden md:flex space-x-8">

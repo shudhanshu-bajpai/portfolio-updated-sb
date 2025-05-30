@@ -35,7 +35,6 @@ export default function AboutSection() {
     "MongoDB",
     "PostgreSQL",
     "Tailwind CSS",
-    "Framer Motion",
     "Git",
     "Docker",
     "AWS",
@@ -56,12 +55,12 @@ export default function AboutSection() {
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             I'm a passionate full-stack developer with a love for creating beautiful, functional web experiences. With
-            expertise in modern JavaScript frameworks and a keen eye for design, I bring ideas to life through code.
+            expertise in modern JavaScript frameworks and a keen eye for design. Diving deep and trying to dominate the backend development..
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -77,9 +76,9 @@ export default function AboutSection() {
               When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or
               sharing knowledge with the developer community.
             </p>
-          </motion.div>
+          </motion.div> */}
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -89,7 +88,7 @@ export default function AboutSection() {
             <div className="w-full h-80 bg-gradient-to-br from-emerald-100 to-green-100 dark:from-emerald-900/20 dark:to-green-900/20 rounded-2xl flex items-center justify-center border-2 border-emerald-200 dark:border-emerald-800">
               <Code className="w-24 h-24 text-emerald-600 dark:text-emerald-400" />
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         <motion.div

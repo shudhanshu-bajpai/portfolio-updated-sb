@@ -1,64 +1,51 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Calendar, MapPin } from "lucide-react"
+import { motion } from "framer-motion";
+import { Calendar, MapPin } from "lucide-react";
 
 export default function TimelineSection() {
   const timelineItems = [
     {
       type: "education",
       title: "Bachelor of Computer Science",
-      organization: "Tech University",
-      location: "New York, NY",
-      date: "2020 - 2024",
-      description: "Graduated with honors, specializing in web development and software engineering.",
+      organization: "ABES Engineering College",
+      location: "Ghaziabad, UP",
+      date: "2022 - 2026",
+      description:
+        "Currently in pre-final year, specializing in web development and software engineering.",
       icon: "🎓",
       color: "from-emerald-400 to-green-500",
     },
     {
-      type: "internship",
-      title: "Frontend Developer Intern",
-      organization: "StartupXYZ",
-      location: "San Francisco, CA",
-      date: "Summer 2023",
-      description: "Developed responsive web applications using React and collaborated with design teams.",
-      icon: "💼",
-      color: "from-green-400 to-emerald-500",
-    },
-    {
-      type: "certification",
-      title: "AWS Certified Developer",
-      organization: "Amazon Web Services",
+      type: "achievement",
+      title: "Problem Solving",
+      organization: "Multiple Coding Platforms",
       location: "Online",
-      date: "2023",
-      description: "Certified in AWS cloud services and serverless application development.",
-      icon: "🏆",
-      color: "from-emerald-500 to-green-400",
+      date: "2022 - 2025",
+      description:
+        "Successfully solved over 200+ coding problems on platforms like LeetCode, GFG, and HackerRank, demonstrating strong algorithmic thinking, consistency, and deep understanding of data structures.",
+      icon: "💻",
+      color: "from-indigo-400 to-purple-500",
     },
-    {
-      type: "project",
-      title: "Open Source Contributor",
-      organization: "Various Projects",
-      location: "Remote",
-      date: "2022 - Present",
-      description: "Active contributor to open source projects, focusing on React and Node.js libraries.",
-      icon: "🌟",
-      color: "from-green-500 to-emerald-400",
-    },
+
     {
       type: "achievement",
       title: "Hackathon Winner",
-      organization: "TechCrunch Disrupt",
-      location: "Boston, MA",
+      organization: "Shivnadar University",
+      location: "Greater Noida, UP",
       date: "2023",
-      description: "First place winner for developing an innovative web application in 48 hours.",
+      description:
+        "Third place winner for developing an innovative web application in 36 hours.",
       icon: "🥇",
       color: "from-emerald-400 to-green-500",
     },
-  ]
+  ];
 
   return (
-    <section id="timeline" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+    <section
+      id="timeline"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900"
+    >
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -71,7 +58,8 @@ export default function TimelineSection() {
             Experience & Achievements
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            My journey in web development, from education to professional experience and achievements.
+            My journey in web development, from education to professional
+            experience and achievements.
           </p>
         </motion.div>
 
@@ -102,7 +90,9 @@ export default function TimelineSection() {
                   className="ml-8 flex-1 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-emerald-200 dark:border-gray-700"
                 >
                   <div className="flex flex-wrap items-center gap-4 mb-3">
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-white">{item.title}</h3>
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+                      {item.title}
+                    </h3>
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${item.color} text-white shadow-md`}
                     >
@@ -124,7 +114,9 @@ export default function TimelineSection() {
                   <h4 className="text-lg font-semibold text-emerald-700 dark:text-emerald-300 mb-2">
                     {item.organization}
                   </h4>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{item.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {item.description}
+                  </p>
                 </motion.div>
               </motion.div>
             ))}
@@ -132,7 +124,7 @@ export default function TimelineSection() {
         </div>
 
         {/* Stats Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -159,8 +151,8 @@ export default function TimelineSection() {
               <div className="text-gray-600 dark:text-gray-400 text-sm font-medium">{stat.label}</div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
-  )
+  );
 }

@@ -1,47 +1,50 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useState } from "react"
-import { ExternalLink, Github, X } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { ExternalLink, Github, X } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function ProjectsSection() {
-  const [selectedProject, setSelectedProject] = useState<number | null>(null)
-  const [selectedSkill, setSelectedSkill] = useState<string | null>(null)
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
 
   const projects = [
     {
       id: 1,
-      title: "KuberVault",
-      description: "Enterprise-grade Kubernetes secrets management platform with advanced encryption.",
+      title: "Streamly",
+      description:
+        "Real-time chat application with authentication, online status, and modern UI.",
       longDescription:
-        "A comprehensive Kubernetes secrets management solution featuring end-to-end encryption, role-based access control, audit logging, and seamless integration with existing CI/CD pipelines. Built with a microservices architecture for scalability and reliability.",
-      image: "/placeholder.svg?height=300&width=400",
+        "Streamly Chat is a full-stack, real-time chat application built using the MERN stack with Socket.io for instant messaging. It features JWT-based authentication and authorization, online user status indication, and global state management with Zustand. The app boasts a responsive, modern UI built using TailwindCSS and DaisyUI. It includes robust error handling on both client and server sides and is deployable for free with best practices. Designed to be scalable, responsive, and developer-friendly.",
+      image: "/assets/streamly.png?height=300&width=400",
       tech: [
+        { name: "MongoDB", icon: "🍃", category: "database" },
+        { name: "Express.js", icon: "🚂", category: "backend" },
         { name: "React", icon: "⚛️", category: "frontend" },
-        { name: "TypeScript", icon: "🔷", category: "frontend" },
         { name: "Node.js", icon: "🟢", category: "backend" },
-        { name: "Kubernetes", icon: "⚙️", category: "devops" },
-        { name: "Docker", icon: "🐳", category: "devops" },
-        { name: "PostgreSQL", icon: "🐘", category: "database" },
-        { name: "Redis", icon: "🔴", category: "database" },
-        { name: "AWS", icon: "☁️", category: "cloud" },
+        { name: "Socket.io", icon: "📡", category: "realtime" },
+        { name: "TailwindCSS", icon: "🎨", category: "frontend" },
+        { name: "DaisyUI", icon: "🌼", category: "frontend" },
+        { name: "Zustand", icon: "🧠", category: "state-management" },
+        { name: "JWT", icon: "🔐", category: "security" },
       ],
-      github: "#",
-      demo: "#",
-      featured: true,
-      category: "Enterprise",
+      github: "https://github.com/shudhanshu-bajpai/chatApp_using_MERN",
+      demo: "https://chatapp-3i01.onrender.com",
+      featured: false,
+      category: "Chat Application",
     },
+
     {
       id: 2,
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with real-time inventory and payment processing.",
+      title: "Greencart",
+      description:
+        "Full-stack e-commerce solution with real-time inventory and payment processing.",
       longDescription:
         "A modern e-commerce platform featuring real-time inventory management, secure payment processing with Stripe, advanced search and filtering, user authentication, order tracking, and an admin dashboard with analytics.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/assets/greencart.png?height=300&width=400",
       tech: [
-        { name: "Next.js", icon: "▲", category: "frontend" },
         { name: "React", icon: "⚛️", category: "frontend" },
         { name: "Tailwind CSS", icon: "🎨", category: "frontend" },
         { name: "Node.js", icon: "🟢", category: "backend" },
@@ -50,78 +53,71 @@ export default function ProjectsSection() {
         { name: "Stripe", icon: "💳", category: "payment" },
         { name: "Vercel", icon: "▲", category: "deployment" },
       ],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/shudhanshu-bajpai/greencart",
+      demo: "https://greencart-frontend-pink.vercel.app/",
       featured: true,
       category: "Full-Stack",
     },
     {
       id: 3,
-      title: "Task Management App",
-      description: "Collaborative task management tool with real-time updates and team features.",
+      title: "Netflix",
+      description:
+        "A full-featured movie streaming platform with user authentication and modern UI.",
       longDescription:
-        "A real-time collaborative task management application with drag-and-drop functionality, team collaboration features, file attachments, progress tracking, and integration with popular productivity tools.",
-      image: "/placeholder.svg?height=300&width=400",
+        "It is a dynamic movie streaming platform built using the MERN stack. It features user authentication with OAuth and Firebase, responsive UI, personalized movie collections, watch history, and seamless video playback. The platform supports secure user sessions, admin-level content management, and integrates cloud services for efficient data handling and hosting. Optimized for performance and user engagement, CineStream offers a Netflix-like experience with modern tooling and best practices.",
+      image: "/assets/netflix.png?height=300&width=400",
       tech: [
-        { name: "Vue.js", icon: "💚", category: "frontend" },
-        { name: "TypeScript", icon: "🔷", category: "frontend" },
-        { name: "Socket.io", icon: "🔌", category: "realtime" },
-        { name: "Node.js", icon: "🟢", category: "backend" },
-        { name: "PostgreSQL", icon: "🐘", category: "database" },
-        { name: "Prisma", icon: "⚡", category: "orm" },
-        { name: "Docker", icon: "🐳", category: "devops" },
-      ],
-      github: "#",
-      demo: "#",
-      featured: false,
-      category: "Collaboration",
-    },
-    {
-      id: 4,
-      title: "Weather Analytics Dashboard",
-      description: "Real-time weather data visualization with predictive analytics.",
-      longDescription:
-        "A comprehensive weather analytics dashboard that provides current weather conditions, 7-day forecasts, historical data analysis, and predictive weather patterns using machine learning algorithms.",
-      image: "/placeholder.svg?height=300&width=400",
-      tech: [
+        { name: "MongoDB", icon: "🍃", category: "database" },
+        { name: "Express.js", icon: "🚂", category: "backend" },
         { name: "React", icon: "⚛️", category: "frontend" },
-        { name: "Python", icon: "🐍", category: "backend" },
-        { name: "D3.js", icon: "📊", category: "visualization" },
-        { name: "FastAPI", icon: "🚀", category: "api" },
-        { name: "PostgreSQL", icon: "🐘", category: "database" },
-        { name: "Redis", icon: "🔴", category: "cache" },
-        { name: "AWS", icon: "☁️", category: "cloud" },
+        { name: "Node.js", icon: "🟢", category: "backend" },
+        { name: "Firebase", icon: "🔥", category: "cloud" },
+        { name: "OAuth", icon: "🛡️", category: "security" },
+        { name: "TailwindCSS", icon: "🎨", category: "frontend" },
+        { name: "JWT", icon: "🔐", category: "security" },
       ],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/shudhanshu-bajpai/netflix_clone",
+      demo: "https://netflixdev.vercel.app/",
       featured: false,
-      category: "Analytics",
+      category: "Streaming Platform",
     },
-  ]
+  ];
 
-  const allTechs = Array.from(new Set(projects.flatMap((project) => project.tech.map((tech) => tech.name))))
+  const allTechs = Array.from(
+    new Set(
+      projects.flatMap((project) => project.tech.map((tech) => tech.name))
+    )
+  );
 
   const filteredProjects = selectedSkill
-    ? projects.filter((project) => project.tech.some((tech) => tech.name === selectedSkill))
-    : projects
+    ? projects.filter((project) =>
+        project.tech.some((tech) => tech.name === selectedSkill)
+      )
+    : projects;
 
   const getSkillColor = (category: string) => {
     const colors = {
-      frontend: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 border-blue-200 dark:border-blue-700",
+      frontend:
+        "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 border-blue-200 dark:border-blue-700",
       backend:
         "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border-green-200 dark:border-green-700",
       database:
         "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 border-purple-200 dark:border-purple-700",
       devops:
         "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-700",
-      cloud: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300 border-cyan-200 dark:border-cyan-700",
-      default: "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300 border-gray-200 dark:border-gray-700",
-    }
-    return colors[category as keyof typeof colors] || colors.default
-  }
+      cloud:
+        "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300 border-cyan-200 dark:border-cyan-700",
+      default:
+        "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300 border-gray-200 dark:border-gray-700",
+    };
+    return colors[category as keyof typeof colors] || colors.default;
+  };
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+    <section
+      id="projects"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -134,8 +130,8 @@ export default function ProjectsSection() {
             Featured Projects
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Here are some of my recent projects that showcase my skills in full-stack development, DevOps, and modern
-            web technologies.
+            Here are some of my recent projects that showcase my skills in
+            full-stack development, DevOps, and modern web technologies.
           </p>
 
           {/* Skill Filter */}
@@ -160,7 +156,9 @@ export default function ProjectsSection() {
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setSelectedSkill(selectedSkill === tech ? null : tech)}
+                onClick={() =>
+                  setSelectedSkill(selectedSkill === tech ? null : tech)
+                }
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   selectedSkill === tech
                     ? "bg-emerald-500 text-white shadow-lg"
@@ -173,7 +171,7 @@ export default function ProjectsSection() {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -190,7 +188,7 @@ export default function ProjectsSection() {
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   {project.featured && (
@@ -206,7 +204,9 @@ export default function ProjectsSection() {
                   <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    {project.description}
+                  </p>
 
                   {/* Technology Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -215,10 +215,14 @@ export default function ProjectsSection() {
                         key={techIndex}
                         whileHover={{ scale: 1.05 }}
                         onClick={(e) => {
-                          e.stopPropagation()
-                          setSelectedSkill(selectedSkill === tech.name ? null : tech.name)
+                          e.stopPropagation();
+                          setSelectedSkill(
+                            selectedSkill === tech.name ? null : tech.name
+                          );
                         }}
-                        className={`inline-flex items-center space-x-1 px-2 py-1 rounded-full text-xs font-medium border cursor-pointer transition-all duration-300 hover:shadow-md ${getSkillColor(tech.category)}`}
+                        className={`inline-flex items-center space-x-1 px-2 py-1 rounded-full text-xs font-medium border cursor-pointer transition-all duration-300 hover:shadow-md ${getSkillColor(
+                          tech.category
+                        )}`}
                       >
                         <span>{tech.icon}</span>
                         <span>{tech.name}</span>
@@ -231,14 +235,14 @@ export default function ProjectsSection() {
                     )}
                   </div>
 
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 justify-start">
                     <Button
                       variant="outline"
                       size="sm"
                       className="flex items-center space-x-2 border-emerald-300 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-600 dark:text-emerald-400 dark:hover:bg-emerald-900/20"
                       onClick={(e) => {
-                        e.stopPropagation()
-                        window.open(project.github, "_blank")
+                        e.stopPropagation();
+                        window.open(project.github, "_blank");
                       }}
                     >
                       <Github className="w-4 h-4" />
@@ -248,8 +252,8 @@ export default function ProjectsSection() {
                       size="sm"
                       className="flex items-center space-x-2 bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white shadow-lg"
                       onClick={(e) => {
-                        e.stopPropagation()
-                        window.open(project.demo, "_blank")
+                        e.stopPropagation();
+                        window.open(project.demo, "_blank");
                       }}
                     >
                       <ExternalLink className="w-4 h-4" />
@@ -279,14 +283,16 @@ export default function ProjectsSection() {
               onClick={(e) => e.stopPropagation()}
             >
               {(() => {
-                const project = projects.find((p) => p.id === selectedProject)
-                if (!project) return null
+                const project = projects.find((p) => p.id === selectedProject);
+                if (!project) return null;
 
                 return (
                   <div className="p-6">
                     <div className="flex justify-between items-start mb-6">
                       <div>
-                        <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">{project.title}</h3>
+                        <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+                          {project.title}
+                        </h3>
                         <span className="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded-full text-sm font-medium">
                           {project.category}
                         </span>
@@ -311,12 +317,16 @@ export default function ProjectsSection() {
 
                     {/* All Technologies */}
                     <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">Technologies Used</h4>
+                      <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">
+                        Technologies Used
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {project.tech.map((tech, index) => (
                           <span
                             key={index}
-                            className={`inline-flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium border ${getSkillColor(tech.category)}`}
+                            className={`inline-flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium border ${getSkillColor(
+                              tech.category
+                            )}`}
                           >
                             <span className="text-base">{tech.icon}</span>
                             <span>{tech.name}</span>
@@ -343,7 +353,7 @@ export default function ProjectsSection() {
                       </Button>
                     </div>
                   </div>
-                )
+                );
               })()}
             </motion.div>
           </motion.div>
@@ -351,10 +361,16 @@ export default function ProjectsSection() {
 
         {/* No Results Message */}
         {filteredProjects.length === 0 && selectedSkill && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-12">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-12"
+          >
             <p className="text-gray-600 dark:text-gray-400 text-lg">
               No projects found using{" "}
-              <span className="font-semibold text-emerald-600 dark:text-emerald-400">{selectedSkill}</span>
+              <span className="font-semibold text-emerald-600 dark:text-emerald-400">
+                {selectedSkill}
+              </span>
             </p>
             <Button
               onClick={() => setSelectedSkill(null)}
@@ -367,5 +383,5 @@ export default function ProjectsSection() {
         )}
       </div>
     </section>
-  )
+  );
 }

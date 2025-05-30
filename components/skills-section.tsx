@@ -13,28 +13,28 @@ export default function SkillsSection() {
         {
           name: "React",
           icon: "⚛️",
-          experience: "3+ years",
+          experience: "2+ years",
           description: "Used in 15+ projects",
           level: "Expert",
         },
         {
           name: "Next.js",
           icon: "▲",
-          experience: "2+ years",
+          experience: "1+ years",
           description: "Production apps",
           level: "Advanced",
         },
         {
           name: "TypeScript",
           icon: "🔷",
-          experience: "2+ years",
+          experience: "1+ years",
           description: "Type-safe development",
           level: "Advanced",
         },
         {
           name: "Tailwind CSS",
           icon: "🎨",
-          experience: "3+ years",
+          experience: "2+ years",
           description: "Responsive designs",
           level: "Expert",
         },
@@ -43,13 +43,6 @@ export default function SkillsSection() {
           icon: "🎭",
           experience: "1+ year",
           description: "Smooth animations",
-          level: "Intermediate",
-        },
-        {
-          name: "Vue.js",
-          icon: "💚",
-          experience: "1+ year",
-          description: "Component-based",
           level: "Intermediate",
         },
       ],
@@ -62,14 +55,14 @@ export default function SkillsSection() {
         {
           name: "Node.js",
           icon: "🟢",
-          experience: "3+ years",
+          experience: "2+ years",
           description: "RESTful APIs",
           level: "Expert",
         },
         {
           name: "Express.js",
           icon: "🚀",
-          experience: "3+ years",
+          experience: "2+ years",
           description: "Web frameworks",
           level: "Advanced",
         },
@@ -83,7 +76,7 @@ export default function SkillsSection() {
         {
           name: "PostgreSQL",
           icon: "🐘",
-          experience: "2+ years",
+          experience: "1+ years",
           description: "Relational databases",
           level: "Advanced",
         },
@@ -97,7 +90,7 @@ export default function SkillsSection() {
         {
           name: "Python",
           icon: "🐍",
-          experience: "2+ years",
+          experience: "N/A",
           description: "Data processing",
           level: "Advanced",
         },
@@ -111,35 +104,35 @@ export default function SkillsSection() {
         {
           name: "Docker",
           icon: "🐳",
-          experience: "2+ years",
+          experience: "N/A",
           description: "Containerization",
           level: "Advanced",
         },
         {
           name: "AWS",
           icon: "☁️",
-          experience: "2+ years",
+          experience: "N/A",
           description: "Cloud deployment",
           level: "Intermediate",
         },
         {
           name: "Git",
           icon: "📝",
-          experience: "4+ years",
+          experience: "3+ years",
           description: "Version control",
           level: "Expert",
         },
         {
           name: "Kubernetes",
           icon: "⚙️",
-          experience: "1+ year",
+          experience: "N/A",
           description: "Used in KuberVault",
           level: "Intermediate",
         },
         {
           name: "CI/CD",
           icon: "🔄",
-          experience: "2+ years",
+          experience: "1+ years",
           description: "GitHub Actions",
           level: "Advanced",
         },
@@ -206,7 +199,7 @@ export default function SkillsSection() {
               </div>
 
               {/* Skills Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skillIndex}
@@ -219,15 +212,15 @@ export default function SkillsSection() {
                   >
                     {/* Skill Header */}
                     <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center space-x-3">
+                      <div className="flex items-center">
                         <span className="text-2xl">{skill.icon}</span>
                         <h4 className="font-semibold text-gray-800 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                           {skill.name}
                         </h4>
                       </div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getLevelColor(skill.level)}`}>
+                      {/* <span className={`px-2 py-1 rounded-full text-xs font-medium ${getLevelColor(skill.level)}`}>
                         {skill.level}
-                      </span>
+                      </span> */}
                     </div>
 
                     {/* Experience & Description */}
@@ -296,10 +289,10 @@ export default function SkillsSection() {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { number: "20+", label: "Technologies", icon: "⚡" },
-            { number: "50+", label: "Projects Built", icon: "🚀" },
+            { number: "25+", label: "Technologies", icon: "⚡" },
+            { number: "15+", label: "Projects Built", icon: "🚀" },
             { number: "4+", label: "Years Coding", icon: "💻" },
-            { number: "15+", label: "Libraries Used", icon: "📚" },
+            { number: "20+", label: "Libraries Used", icon: "📚" },
           ].map((stat, index) => (
             <motion.div
               key={index}
