@@ -5,6 +5,8 @@ import { useState } from "react"
 import { MessageCircle, X, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { useRef, useEffect } from "react";
+
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,18 +18,56 @@ export default function ChatBot() {
     },
   ])
 
-  const handleSendMessage = () => {
-    if (!message.trim()) return
+  // const handleSendMessage = () => {
+  //   if (!message.trim()) return
 
-    const newMessages = [
-      ...messages,
-      { type: "user", content: message },
-      { type: "bot", content: "Thank for your message! Shudhanshu will get back to you soon." },
-    ]
+  //   const newMessages = [
+  //     ...messages,
+  //     { type: "user", content: message },
+  //     { type: "bot", content: "Thank for your message! Shudhanshu will get back to you soon." },
+  //   ]
 
-    setMessages(newMessages)
-    setMessage("")
+  //   setMessages(newMessages)
+  //   setMessage("")
+  // }
+  const handleSendMessage = async () => {
+  if (!message.trim()) return;
+
+  const userMessage = { type: "user", content: message };
+
+  // Optimistically show user message
+  setMessages(prev => [...prev, userMessage]);
+  setMessage("");
+
+  try {
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message }),
+    });
+
+    const data = await res.json();
+
+    const botMessage = { type: "bot", content: data.reply || "Sorry, I couldn't respond right now." };
+
+    setMessages(prev => [...prev, botMessage]);
+  } catch (error) {
+    console.error("Chatbot fetch error:", error);
+    setMessages(prev => [
+      ...prev,
+      { type: "bot", content: "Oops! Something went wrong. Please try again later." },
+    ]);
   }
+};
+const messagesEndRef = useRef<HTMLDivElement | null>(null);
+
+useEffect(() => {
+  if (messagesEndRef.current) {
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+  }
+}, [messages]);
+
+
 
   return (
     <>
@@ -89,6 +129,7 @@ export default function ChatBot() {
                 </div>
               </div>
             ))}
+            <div ref={messagesEndRef} />
           </div>
 
           {/* Chat Input */}
@@ -115,3 +156,5 @@ export default function ChatBot() {
     </>
   )
 }
+
+
