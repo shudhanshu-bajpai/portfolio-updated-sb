@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ChevronDown, Github, Linkedin, Mail } from "lucide-react"
+import { ChevronDown, Github, Linkedin, Mail, Target } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function HeroSection() {
@@ -117,16 +117,17 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 1 }}
             >
               {[
-                { icon: Github, href: "#", label: "GitHub" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Mail, href: "#", label: "Email" },
+                { icon: Github, href: "https://github.com/shudhanshu-bajpai", label: "GitHub" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/shudhanshu-bajpai", label: "LinkedIn" },
+                { icon: Mail, href: "mailto:shudhanshubajpai99@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }, index) => (
                 <motion.a
                   key={index}
                   href={href}
+                  target="_blank"
                   whileHover={{ scale: 1.2, y: -5 }}
                   whileTap={{ scale: 0.9 }}
-                  className="text-gray-600 hover:text-emerald-500 dark:text-gray-400 dark:hover:text-emerald-400 transition-all duration-300"
+                  className="text-gray-600 hover:text-emerald-500 dark:text-gray-400 dark:hover:text-emerald-400 transition-all duration-200"
                   aria-label={label}
                 >
                   <Icon size={24} />

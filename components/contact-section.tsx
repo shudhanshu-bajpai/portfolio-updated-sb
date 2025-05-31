@@ -4,10 +4,11 @@ import type React from "react"
 
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react"
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, X, Instagram} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import Footer from "./footer"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -34,27 +35,29 @@ export default function ContactSection() {
     {
       icon: Mail,
       label: "Email",
-      value: "shudhanshu@example.com",
-      href: "mailto:shudhanshu@example.com",
+      value: "shudhanshubajpai99@gmail.com",
+      href: "mailto:shudhanshubajpai99@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+91-7880918600",
       href: "tel:+15551234567",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "New York, NY",
-      href: "#",
+      value: "Ghaziabad, India",
+      href: "https://www.google.com/maps/place/Ghaziabad,+Uttar+Pradesh/@28.6996531,77.3950283,22201m/data=!3m2!1e3!4b1!4m6!3m5!1s0x390cf1bb41c50fdf:0xe6f06fd26a7798ba!8m2!3d28.6691565!4d77.4537578!16zL20vMDZkbG0x?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D",
     },
   ]
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Github, href: "https://github.com/shudhanshu-bajpai", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/shudhanshu-bajpai/", label: "LinkedIn" },
+    { icon: Instagram, href: "https://www.instagram.com/bajpaionline/", label: "Instagram" },
+    { icon: Twitter, href: "https://x.com/shudhanshu_99", label: "Twitter"}
+    
   ]
 
   return (
@@ -94,6 +97,7 @@ export default function ContactSection() {
                 <motion.a
                   key={index}
                   href={info.href}
+                  target="_blank"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -119,15 +123,17 @@ export default function ContactSection() {
                   <motion.a
                     key={index}
                     href={social.href}
+                    target="_blank"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.2, y: -5 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-12 h-12 bg-gradient-to-r from-emerald-400 to-green-500 rounded-full flex items-center justify-center text-white hover:shadow-lg transition-all duration-300"
+                    className="w-10 h-10 flex items-center rounded-full justify-center text-gray hover:shadow-lg  transition-all duration-300"
                     aria-label={social.label}
                   >
+                    {/* bg-gradient-to-r from-emerald-400 to-green-500 rounded-full*/}
                     <social.icon className="w-5 h-5" />
                   </motion.a>
                 ))}
@@ -247,6 +253,7 @@ export default function ContactSection() {
           </motion.div>
         </div>
       </div>
+      <Footer/>
     </section>
   )
 }
