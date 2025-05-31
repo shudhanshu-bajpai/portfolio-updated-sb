@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { ChevronDown, Github, Linkedin, Mail, Target } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+
 export default function HeroSection() {
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
@@ -93,13 +94,14 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
+              <a href="https://drive.google.com/drive/folders/182J3gVMK4VslJkFeiZnZF6mLBp826ZP-" target="_blank">
               <Button
-                onClick={scrollToProjects}
                 size="lg"
                 className="bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                View Projects
+                Resume
               </Button>
+              </a>
               <Button
                 onClick={scrollToContact}
                 variant="outline"
